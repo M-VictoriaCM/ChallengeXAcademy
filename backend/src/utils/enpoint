@@ -1,0 +1,255 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2024-11-11T06:53:53.194Z",
+    "__export_source": "insomnia.desktop.app:v10.1.1",
+    "resources": [
+        {
+            "_id": "req_e12c590b1ae84b148b1596e19795ea0e",
+            "parentId": "wrk_270518307c9c4d20814bb89ccc61daee",
+            "modified": 1730732848472,
+            "created": 1730732787662,
+            "url": "http://localhost:8080/player/556",
+            "name": "New Request",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": 556,\n\t\"fifa_version\": \"15\",\n\t\"fifa_update_date\": \"2024-11-04T14:33:07.000Z\",\n\t\"fifa_update\": \"2\",\n\t\"player_face_url\": \"http://example.com/player_face.jpg\",\n\t\"long_name\": \"Lionel Messi\",\n\t\"short_name\": \"Messi\",\n\t\"player_positions\": \"RW\",\n\t\"overall\": 93,\n\t\"age\": 34,\n\t\"height_cm\": 170,\n\t\"weight_kg\": 72,\n\t\"player_url\": \"http://example.com/messi\",\n\t\"club_name\": \"Inter Miami\",\n\t\"nationality_name\": \"Argentina\",\n\t\"potential\": 93,\n\t\"skill_moves\": null,\n\t\"international_reputation\": null,\n\t\"work_rate\": null\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/10.1.1"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1730732787662,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_270518307c9c4d20814bb89ccc61daee",
+            "parentId": null,
+            "modified": 1730332775686,
+            "created": 1730332775686,
+            "name": "ChallengeXAcadey",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_22bb1f639d6e44e4b00b504ac2f67e5a",
+            "parentId": "wrk_270518307c9c4d20814bb89ccc61daee",
+            "modified": 1730732782877,
+            "created": 1730394442555,
+            "url": "http://localhost:8080/player/",
+            "name": "Nuevo",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n    \"fifa_version\": \"15\",\n    \"fifa_update\": \"2\",\n    \"player_face_url\": \"http://example.com/player_face.jpg\",\n    \"long_name\": \"Lionel Messi\",\n    \"short_name\": \"Messi\",\n    \"player_url\": \"http://example.com/messi\",\n    \"player_positions\": \"RW\",\n    \"overall\": 93,\n    \"potential\": 93,\n    \"age\": 34,\n    \"height_cm\": 170,\n    \"weight_kg\": 72,\n    \"preferred_foot\": \"left\",\n    \"body_type\": \"normal\",\n    \"nationality_name\": \"Barcelona\",\n    \"club_name\": \"Inter Miami\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/10.1.1"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1730394442555,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_ecad06c1acae4b63b026a169fba02c23",
+            "parentId": "wrk_270518307c9c4d20814bb89ccc61daee",
+            "modified": 1731305700607,
+            "created": 1730382397984,
+            "url": "http://localhost:8080/player",
+            "name": "Filtro",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [
+                {
+                    "id": "pair_3cde1b97f05a447c92742fac5b153c49",
+                    "name": "short_name",
+                    "value": "Sergio Ramos",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_86fdac774d55414e920adb29e8c864e6",
+                    "name": "long_name",
+                    "value": "Sergio Ramos García",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_1c98f2f41c58452191a0c80b1f1e9684",
+                    "name": "player_positions",
+                    "value": "cb",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_e53b93637353477daff6329dd946f4e9",
+                    "name": "club_name",
+                    "value": "Real Madrid CF",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_8eaa0fe67ca24d5da883a2a99547c7d5",
+                    "name": "nationality_name",
+                    "value": "Spain",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_585deda5855c496ab2f9f1750c4012f1",
+                    "name": "potential",
+                    "value": "87",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_f3d639eb9f8a4533a30dc5b3bf2d07ae",
+                    "name": "age",
+                    "value": "27",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_ac228ac6f7d2483288f8785bc4f0d06d",
+                    "name": "height_cm",
+                    "value": "183",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_12678ee2e61e498789e317522921233c",
+                    "name": "preferred_foot",
+                    "value": "left",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_03daa112b536482380b28f768b13d241",
+                    "name": "skills_moves",
+                    "value": "2",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_00dfbe5a7baf40349da32e1e4f5ff2d7",
+                    "name": "international_reputation",
+                    "value": "2",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_b4a0be72b7154fb4adb6ba17901b2744",
+                    "name": "work_rate",
+                    "value": "Low/High",
+                    "description": "",
+                    "disabled": true
+                }
+            ],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/10.1.1"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1730382397985,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_6039ed2448d64b9abd6097dd1171186c",
+            "parentId": "wrk_270518307c9c4d20814bb89ccc61daee",
+            "modified": 1731305811387,
+            "created": 1730332786161,
+            "url": "http://localhost:8080/player/556",
+            "name": "getId",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/10.1.1"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1730332786162,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_a575141d98a7c010ba85af2c39d6d3f0d55876c8",
+            "parentId": "wrk_270518307c9c4d20814bb89ccc61daee",
+            "modified": 1730332775692,
+            "created": 1730332775692,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1730332775692,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_a575141d98a7c010ba85af2c39d6d3f0d55876c8",
+            "parentId": "wrk_270518307c9c4d20814bb89ccc61daee",
+            "modified": 1730332775696,
+            "created": 1730332775696,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        }
+    ]
+}
