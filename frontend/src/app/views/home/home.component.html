@@ -1,0 +1,36 @@
+<div class="container conteiner_home">
+  <!--Selectir de paginas-->
+  <app-page-size-selector 
+  [pageSize]="pageSize"
+  (pageSizeChange)="updatePageSize($event)"
+  ></app-page-size-selector>
+  
+  <!--Grid de cards-->
+  <div *ngIf="players.length > 0; else noData" >
+    <div class="container_section">
+      <div class="grid_card">
+        <!--Card-->
+        <app-grid-player
+        *ngFor="let player of players" [player]="player"></app-grid-player>
+      </div>
+          
+      <!-- Pagination Controls -->
+      <app-pagination
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      (pageChange)="onPageChange($event)"
+      ></app-pagination>
+    </div>
+  </div>
+  
+  <ng-template #noData>
+    <p>No players found.</p>
+  </ng-template>
+  
+</div>
+
+            
+            
+            
+            
+            

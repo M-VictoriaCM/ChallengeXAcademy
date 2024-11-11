@@ -1,0 +1,12 @@
+<div class="page-size-selector">
+  <select class="form-select"  aria-label="Floating label select example"   
+  id="pageSize"
+  [value]="pageSize" 
+  (change)="onPageSizeChange($event)"
+>
+<option selected>Resultados por páginas</option>
+  <option *ngFor="let size of [10, 20, 50, 100]" [value]="size">{{size }}</option>
+  <!-- <option *ngFor="let size of [10, 20, 50, 100]" [value]="size">{{ size }}</option> -->
+</select>
+
+</div>
