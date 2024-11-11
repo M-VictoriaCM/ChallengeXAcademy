@@ -4,6 +4,8 @@ import { PlayerService } from '../../services/player.service';
 import { GridPlayerComponent } from "../grid-player/grid-player.component";
 import { PageSizeSelectorComponent } from "../../core/page-size-selector/page-size-selector.component";
 import { PaginationComponent } from "../../core/pagination/pagination.component";
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -26,7 +28,8 @@ export class HomeComponent implements OnInit{
   totalPages: number = 10;//Cantidad de jugadores
  
 
-  constructor(private playerService: PlayerService){ }
+  constructor(private playerService: PlayerService,
+    private router: Router){ }
   
   ngOnInit(): void {
     this.loadPlayers();
@@ -77,5 +80,9 @@ export class HomeComponent implements OnInit{
     this.currentPage = newPage;
     this.loadPlayers(); // Recarga los datos con la nueva página
   }  
+  goToCreate(): void {
+    console.log('Redirigiendo a /player/create');
+    this.router.navigate(['/player/create']);
+  }
   
 }

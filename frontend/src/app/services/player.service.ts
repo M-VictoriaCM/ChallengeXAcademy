@@ -21,4 +21,8 @@ export class PlayerService {
   getPlayer(id:number):Observable<any>{
     return this.httpClient.get<any>(`${this.apiUrl}/${id}`);
   }
+  
+  createPlayer(playerData:any):Observable<any>{
+    return this.httpClient.post<any>(`${this.apiUrl}/create`, playerData);
+  }
 }

@@ -1,9 +1,17 @@
 <div class="container conteiner_home">
+  <div class="content_home">
+    <div class="panelControl">
+      <button type="button" class="btn btn-primary" (click)="goToCreate()">Nuevo</button>
+      <button type="button" class="btn btn-secondary">Editar</button>
+    </div>
+    
   <!--Selectir de paginas-->
   <app-page-size-selector 
   [pageSize]="pageSize"
   (pageSizeChange)="updatePageSize($event)"
   ></app-page-size-selector>
+  </div>
+  
   
   <!--Grid de cards-->
   <div *ngIf="players.length > 0; else noData" >
