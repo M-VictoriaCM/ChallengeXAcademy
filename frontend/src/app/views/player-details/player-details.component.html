@@ -1,0 +1,28 @@
+<div class="contaierTitle">
+    <h1 class="titleDetail">FICHA TÉCNICA</h1>
+</div>
+<div *ngIf="player" class="container">
+    <div class="foto">
+        <img [src]="player.player_face_url" alt="player">
+    </div>
+    <div class="detalles">
+        <h1>Nombre y Apellido: {{player.long_name}}</h1>
+        <p>Edad: {{player.age}}</p>
+        <p>Posición: {{ player.player_positions}}</p>
+        <p>Overall: {{player.overall}}</p>
+        <p>Altura: {{player.height_cm}}</p>
+        <p>Peso:{{player.weight_kg}}</p>
+        <p>Club: {{player.club_name}}</p>
+        <p>Nacionalidad: {{player.nationality_name}}</p>
+        <p>Pontencia: {{player.potential}}</p>
+        <p>Movimientos: {{player.skill_moves}}</p>
+        <p>Reputacion Internacional: {{player.international_reputation}}</p>
+        <p>Rendimiento:{{player.work_rate}}</p>
+    </div>
+    
+</div>
+<div class="containerGrafico">
+    <h1>GRÁFICO</h1>
+    <canvas #skillsChart></canvas>
+</div>
+<canvas #skillsChart width="100" height="100"></canvas>

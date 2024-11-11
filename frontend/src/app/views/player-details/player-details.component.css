@@ -1,0 +1,60 @@
+.contaierTitle{
+    width:100%;
+    height:70px;
+    display: flex;
+    justify-content: center;
+}
+.titleDetail{
+    color:white;
+    font-size: 3rem;;
+}
+.container {
+    display: flex;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.foto {
+    flex: 1;
+    padding: 20px;
+    background-color: #e9e9e9;
+}
+
+.foto img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.detalles {
+    flex: 2;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.detalles h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.detalles p {
+    margin: 5px 0;
+    color: #555;
+}
+canva{
+    width: 100px;
+    height: 100px;
+    background: white;
+}
+.containerGrafico{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(233, 232, 232);
+    margin-top: 2rem;
+}

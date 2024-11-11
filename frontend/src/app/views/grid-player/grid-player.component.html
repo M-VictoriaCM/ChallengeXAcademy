@@ -1,0 +1,10 @@
+<div  class="card"> 
+  <img [src]="player?.player_face_url" class="card-img-top" alt="Player image">
+  <div class="card-body">
+    <h5 class="card-title">{{ player?.short_name }} - {{ player?.club_name }}</h5>
+    
+    <a [routerLink]="['/player', player?.id]" class="btn btn-primary">Ver más</a>
+  </div>
+</div>
+
+
