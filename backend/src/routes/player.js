@@ -24,7 +24,7 @@ router.get('/', async (request, response) => {
     }    
 });
 
-router.post('/', async (request, response) => {
+router.post('/create', async (request, response) => {
     const { 
         fifa_version,
         fifa_update ='2',
