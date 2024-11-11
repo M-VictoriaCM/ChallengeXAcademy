@@ -1,0 +1,44 @@
+<div class="container conteiner_home">
+  <div class="content_home">
+    <div class="panelControl">
+      <button type="button" class="btn btn-primary" (click)="goToCreate()">Nuevo</button>
+      <button type="button" class="btn btn-secondary">Editar</button>
+    </div>
+    
+  <!--Selectir de paginas-->
+  <app-page-size-selector 
+  [pageSize]="pageSize"
+  (pageSizeChange)="updatePageSize($event)"
+  ></app-page-size-selector>
+  </div>
+  
+  
+  <!--Grid de cards-->
+  <div *ngIf="players.length > 0; else noData" >
+    <div class="container_section">
+      <div class="grid_card">
+        <!--Card-->
+        <app-grid-player
+        *ngFor="let player of players" [player]="player"></app-grid-player>
+      </div>
+          
+      <!-- Pagination Controls -->
+      <app-pagination
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      (pageChange)="onPageChange($event)"
+      ></app-pagination>
+    </div>
+  </div>
+  
+  <ng-template #noData>
+    <p>No players found.</p>
+  </ng-template>
+  
+</div>
+
+            
+            
+            
+            
+            

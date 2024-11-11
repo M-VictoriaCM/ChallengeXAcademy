@@ -32,6 +32,7 @@ const getPlayers = async (request)=>{
         work_rate}=request.query;
 
         try {
+            
             //utilizo el tolowerCase() para no tener problemas con las mayusculas
             let query = {};
             if(short_name){
@@ -70,11 +71,26 @@ const getPlayers = async (request)=>{
             if(work_rate){
                 query.work_rate ={[Op.like]:   `%${work_rate}%`};
             }
+            const { page=1, limit = 3} = request.query;
+            const offset =(page - 1)* limit;
             //Guardo todas las queries en una variable
-            const players = await Player.findAll({where:query});
-            if(players.length >0){//si el largo de la cadena es mayor a cero, retorno el jugador
-                return players;
-            }else{ //en caso contrario, le muestro un mensaje de error al usuario
+            const { count, rows: players } = await Player.findAndCountAll({
+                where: query,
+                limit: parseInt(limit, 10),
+                offset: parseInt(offset, 10)
+            });
+            if (players.length > 0) {
+                const totalPages = Math.ceil(count / limit);
+                return {
+                    players,
+                    pagination: {
+                        totalItems: count,
+                        totalPages,
+                        currentPage: parseInt(page, 10),
+                        itemsPerPage: parseInt(limit, 10)
+                    }
+                };
+            } else {
                 throw new Error('No se encontraron resultados');
             }
         } catch (error) {
