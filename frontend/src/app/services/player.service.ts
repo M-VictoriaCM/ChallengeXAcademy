@@ -25,4 +25,8 @@ export class PlayerService {
   createPlayer(playerData:any):Observable<any>{
     return this.httpClient.post<any>(`${this.apiUrl}/create`, playerData);
   }
+
+  updatePlayer(id: number, playerData: any): Observable<any> {
+    return this.httpClient.put<any>(`${this.apiUrl}/${id}`, playerData);
+  }
 }

@@ -1,0 +1,118 @@
+<div class="container">
+  <h2>{{ isEditMode ? 'Modificar Jugador' : 'Crear Nuevo Jugador' }}</h2>
+  <!-- Campo para ingresar el ID del jugador -->
+  <div>
+    <label for="playerId" class="form-label">ID del Jugador</label>
+    <input id="playerId" class="form-control" [(ngModel)]="playerId" type="number" />
+    <button type="button" class="btn btn-primary mt-2" (click)="fetchPlayerData()">Buscar Jugador</button>
+  </div>  
+  <h2>Crear Nuevo Jugador</h2>
+    <form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+      
+      <div>
+        <label for="fifa_version" class="form-label">Versión FIFA:</label>
+        <input id="fifa_version" class="form-control" formControlName="fifa_version" type="text" />
+      </div>
+    
+      <div>
+        <label for="fifa_update" class="form-label">Número de Actualización:</label>
+        <input id="fifa_update" class="form-control" formControlName="fifa_update" type="text" />
+      </div>
+  
+      <div>
+        <label for="player_face_url" class="form-label">URL de la Foto:</label>
+        <input id="player_face_url" class="form-control" formControlName="player_face_url" type="text" />
+      </div>
+  
+      <div>
+        <label for="long_name" class="form-label">Nombre Completo:</label>
+        <input id="long_name" class="form-control" formControlName="long_name" type="text" />
+        <div *ngIf="playerForm.get('long_name')?.invalid && playerForm.get('long_name')?.touched">
+          <small>Este campo es obligatorio.</small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="short_name" class="form-label">Nombre Corto:</label>
+        <input id="short_name" class="form-control" formControlName="short_name" type="text" />
+        <div *ngIf="playerForm.get('short_name')?.invalid && playerForm.get('short_name')?.touched">
+          <small>Este campo es obligatorio.</small>
+        </div>
+      </div>
+      <div>
+        <label for="player_url" class="form-label">URL del Jugador:</label>
+        <input id="player_url" class="form-control" formControlName="player_url" type="text" />
+      </div>
+  
+      <div>
+        <label for="player_positions" class="form-label">Posiciones:</label>
+        <input id="player_positions" class="form-control" formControlName="player_positions" type="text" />
+      </div>
+  
+      <div>
+        <label for="overall" class="form-label">Overall:</label>
+        <input id="overall" class="form-control" formControlName="overall" type="number" />
+      </div>
+      <div>
+        <label for="potential" class="form-label">Potencial:</label>
+        <input id="potential" class="form-control" formControlName="potential" type="number" />
+      </div>
+  
+      <div>
+        <label for="age" class="form-label">Edad:</label>
+        <input id="age" class="form-control" formControlName="age" type="number" />
+      </div>
+  
+      <div>
+        <label for="height_cm" class="form-label">Altura (cm):</label>
+        <input id="height_cm" class="form-control" formControlName="height_cm" type="number" />
+      </div>
+  
+      <div>
+        <label for="weight_kg" class="form-label">Peso (kg):</label>
+        <input id="weight_kg" class="form-control" formControlName="weight_kg" type="number" />
+      </div>
+      <div>
+        <label for="nationality_name" class="form-label">Píe Preferido</label>
+        <input id="nationality_name" class="form-control" formControlName="preferred_foot" type="text" />
+      </div>
+      <div>
+        <label for="nationality_name" class="form-label">Tipo de Cuerpo</label>
+        <input id="nationality_name" class="form-control" formControlName="body_type" type="text" />
+      </div>
+      <div>
+        <label for="nationality_name" class="form-label">Nacionalidad:</label>
+        <input id="nationality_name" class="form-control" formControlName="nationality_name" type="text" />
+      </div>  
+  
+      <div>
+        <label for="club_name" class="form-label">Nombre del Club:</label>
+        <input id="club_name" class="form-control" formControlName="club_name" type="text" />
+      </div>
+      <div>
+        <label for="skill_moves" class="form-label">Movimientos de Habilidad:</label>
+        <input id="skill_moves" class="form-control" formControlName="skill_moves" type="number" />
+      </div>
+  
+      <div>
+        <label for="international_reputation" class="form-label">Reputación Internacional:</label>
+        <input id="international_reputation" class="form-control" formControlName="international_reputation" type="number" />
+      </div>
+  
+      <div>
+        <label for="work_rate" class="form-label">Work Rate:</label>
+        <input id="work_rate" class="form-control" formControlName="work_rate" type="text" />
+      </div>
+      
+      <button type="submit" class="btn btn-primary" [disabled]="playerForm.invalid">
+        {{ isEditMode ? 'Actualizar Jugador' : 'Crear Jugador' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+    </form>
+  </div>
+  <div *ngIf="playerForm.get('player_face_url')?.invalid && playerForm.get('player_face_url')?.touched">
+    <small *ngIf="playerForm.get('player_face_url')?.errors?.['required']">La URL es obligatoria.</small>
+    <small *ngIf="playerForm.get('player_face_url')?.errors?.['pattern']">Debe ser una URL válida.</small>
+  </div>
+  
+  

@@ -84,5 +84,10 @@ export class HomeComponent implements OnInit{
     console.log('Redirigiendo a /player/create');
     this.router.navigate(['/player/create']);
   }
+
+  goToEdite(): void {
+    console.log('Redirigiendo a /player/edit/:id');
+    this.router.navigate(['/player/edit/:id']);
+  }
   
 }

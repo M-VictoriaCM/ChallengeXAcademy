@@ -3,6 +3,7 @@ import { HomeComponent } from './views/home/home.component';
 import { PlayerDetailsComponent } from './views/player-details/player-details.component';
 import { NgModule } from '@angular/core';
 import { PlayerCreateComponent } from './views/player-create/player-create.component';
+import { PlayerEditComponent } from './views/player-edit/player-edit.component';
 
 export const routes: Routes = [
     {
@@ -16,6 +17,10 @@ export const routes: Routes = [
     {
         path:'player/:id',
         component: PlayerDetailsComponent
+    },
+    {
+        path:'player/edit/:id',
+        component: PlayerEditComponent
     },
     
     { path:'', redirectTo:'/home', pathMatch:'full'},
