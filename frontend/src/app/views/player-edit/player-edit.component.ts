@@ -36,7 +36,7 @@ export class PlayerEditComponent implements OnInit{
       long_name: ['', Validators.required],
       short_name: ['', Validators.required],
       player_url: [''],
-      player_positions: [''],
+      player_positions: [0],
       overall: [0],
       potential: [0],
       age: [0],
@@ -44,11 +44,11 @@ export class PlayerEditComponent implements OnInit{
       weight_kg: [0],
       preferred_foot: [''],
       body_type: [''],
-      nationality_name: [''],
+      nationality_name: ['', Validators.required],
       club_name: [''],
       skill_moves: [0],
       international_reputation: [0],
-      work_rate: ['']
+      work_rate: ['', Validators.required]
     });
 
     // Obtener el `playerId` desde la ruta
@@ -87,6 +87,7 @@ export class PlayerEditComponent implements OnInit{
         (response) => {
           console.log('Jugador actualizado:', response);
           this.resetForm();
+          this.router.navigate(['/home']); 
         },
         (error) => {
           console.error('Error al actualizar el jugador:', error);
